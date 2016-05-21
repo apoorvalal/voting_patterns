@@ -38,13 +38,13 @@ cap log close
 clear all
 * set graphics off
 
-cd "${code}/sub/"
+cd "${code}/"
 
 //----------------------------------------------------------------------------//
 // Main
 //----------------------------------------------------------------------------//
 
-do clean_census_data
+do "${code}/sub/clean_census_data"
 
 * // Tables
 * 	do "code/sub/analysis_tables.do"

@@ -31,6 +31,4 @@ write_dta(Household,paste0(path,"/","household.dta"))
 write_dta(Individual01,paste0(path,"/","Individual01.dta"))
 write_dta(Individual02,paste0(path,"/","Individual02.dta"))
 
-save(obj_name,file="raw_census_files.rda")
 rm(list= ls()[!(ls() %in% c('path','sys'))])
-

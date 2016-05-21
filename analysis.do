@@ -40,6 +40,8 @@ cd "$path/code/sub"
 // Main
 //----------------------------------------------------------------------------//
 
+do clean_census_data
+
 * // Tables
 * 	do "code/sub/analysis_tables.do"
 * // Figures

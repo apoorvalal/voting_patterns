@@ -38,12 +38,19 @@ cap log close
 clear all
 * set graphics off
 
+cd "${code}/sub/"
+
+
+
 
 
 do clean_census_data
 
+* 
 * 	do "code/sub/analysis_tables.do"
+* 
 * 	do "code/sub/analysis_figures.do"
+* 
 * 	do "code/sub/analysis_regressions.do"
 
 

@@ -12,14 +12,18 @@
 // Shortcuts
 //----------------------------------------------------------------------------//
 
-gl sys "mac" // or win - change when switching systems
-gl path_win "C:/Users\Apoorva Lal\Desktop\Research Papers\voting_patterns_nepal\analysis"
+gl sys "win" // mac or win - change when switching systems
+gl path_win "C:/Users/Apoorva Lal/Desktop/Research Papers/voting_patterns_nepal/analysis/"
 gl path_mac "/Users/apoorvalal/Desktop/projects/nepal_voting_patterns/analysis"
 
 gl path "${path_${sys}}"
 
 gl input "${path}/input" 
 gl output "${path}/output"
+gl code_win "${path_win}/code/voting_patterns/"
+gl code_mac "${path_mac}/code/"
+gl code "${code_${sys}}" 
+
 gl tmp "${path}/tmp"
 
 cd "${input}"
@@ -34,7 +38,7 @@ cap log close
 clear all
 * set graphics off
 
-cd "$path/code/sub"
+cd "${code}/sub/"
 
 //----------------------------------------------------------------------------//
 // Main

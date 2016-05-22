@@ -12,7 +12,7 @@
 // Shortcuts
 //----------------------------------------------------------------------------//
 
-gl sys "win" // mac or win - change when switching systems
+gl sys "mac" // mac or win - change when switching systems
 gl path_win "C:/Users/Apoorva Lal/Desktop/Research Papers/voting_patterns_nepal/analysis/"
 gl path_mac "/Users/apoorvalal/Desktop/projects/nepal_voting_patterns/analysis"
 
@@ -44,6 +44,7 @@ cd "${code}/"
 // Main
 //----------------------------------------------------------------------------//
 
+do "${code}/sub/0_extract_labels"
 do "${code}/sub/clean_census_data"
 
 * // Tables

@@ -1,0 +1,15 @@
+label define ECO_DEV 1 `"Eastern Mountain"', modify
+label define ECO_DEV 2 `"Eastern Hill"', modify
+label define ECO_DEV 3 `"Eastern Terai"', modify
+label define ECO_DEV 4 `"Central Mountain"', modify
+label define ECO_DEV 5 `"Central Hill"', modify
+label define ECO_DEV 6 `"Central Terai"', modify
+label define ECO_DEV 7 `"Western Mountain"', modify
+label define ECO_DEV 8 `"Western Hill"', modify
+label define ECO_DEV 9 `"Western Terai"', modify
+label define ECO_DEV 10 `"Mid-Western Mountain"', modify
+label define ECO_DEV 11 `"Mid-Western Hill"', modify
+label define ECO_DEV 12 `"Mid-Western Terai"', modify
+label define ECO_DEV 13 `"Far-Western Mountain"', modify
+label define ECO_DEV 14 `"Far-Western Hill"', modify
+label define ECO_DEV 15 `"Far-Western Terai"', modify

@@ -1,5 +1,4 @@
-loc path "${input}/Nepal Census 2011/pums/assets/datafiles/"
-ls "`path'"
+loc path "${raw_2011}"
 
 * extract labels from batchid file 
 

@@ -8,5 +8,5 @@ label define H07C 0 `"Mobile phone"', modify
 label define H07C 0 `"Motor"', modify
 label define H07C 0 `"Motorcycle"', modify
 label define H07C 0 `"Bicycle"', modify
-label define H07C 0 `"Other vehicle"', modify
-label define H07C 100663296 `"Refrigerator"', modify
+label define H07C 214561536 `"Other vehicle"', modify
+label define H07C 0 `"Refrigerator"', modify

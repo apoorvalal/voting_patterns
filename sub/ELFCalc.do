@@ -1,7 +1,6 @@
 use "/Users/Apoorva/Downloads/Data/Nepal Census 2011/HHMaster2011.dta", clear
 
 decode  HHCaste, gen (stHHCaste)
-
 egen tag = tag(DistCons stHHCaste)
 bysort DistCons: egen NumEthCons = total(tag)
 

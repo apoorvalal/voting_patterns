@@ -8,7 +8,7 @@ label define H07A 0 `"Mobile phone"', modify
 label define H07A 0 `"Motor"', modify
 label define H07A 0 `"Motorcycle"', modify
 label define H07A 0 `"Bicycle"', modify
-label define H07A 0 `"Other vehicle"', modify
-label define H07A 34 `"Refrigerator"', modify
-label define H07A 0 `"None"', modify
-label define H07A 0 `"Not Stated"', modify
+label define H07A 2 `"Other vehicle"', modify
+label define H07A -822062180 `"Refrigerator"', modify
+label define H07A 1868776736 `"None"', modify
+label define H07A 1684949296 `"Not Stated"', modify

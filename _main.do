@@ -12,19 +12,22 @@
 // Shortcuts
 //----------------------------------------------------------------------------//
 
-gl sys "mac" // mac or win - change when switching systems
-gl path_win "C:/Users/Apoorva Lal/Desktop/Research Papers/voting_patterns_nepal/analysis/"
+gl sys "win" // mac or win - change when switching systems
+gl path_win "C:/Users/Apoorva Lal/Desktop/Research Papers/Nepal_Voting/analysis/"
 gl path_mac "/Users/apoorvalal/Desktop/projects/nepal_voting_patterns/analysis"
 
 gl path "${path_${sys}}"
 
 gl input "${path}/input" 
 gl output "${path}/output"
-gl code_win "${path_win}/code/voting_patterns/"
+gl code_win "${path_win}/code/"
 gl code_mac "${path_mac}/code/"
 gl code "${code_${sys}}" 
 
 gl tmp "${path}/tmp"
+
+// Data Sources
+gl raw_2011 "${input}/Nepal Census 2011/pums/assets/datafiles/"
 
 cd "${input}"
 
@@ -44,13 +47,9 @@ cd "${code}/"
 // Main
 //----------------------------------------------------------------------------//
 
-do "${code}/sub/0_extract_labels"
-do "${code}/sub/clean_census_data"
+// do "${code}/sub/c2011_0_extract_labels"
+// do "${code}/sub/c2011_1_clean_hh_data"
+do "${code}/sub/c2011_1_clean_ind_data"
 
-* // Tables
-* 	do "code/sub/analysis_tables.do"
-* // Figures
-* 	do "code/sub/analysis_figures.do"
-* // Regressions
-* 	do "code/sub/analysis_regressions.do"
+
 

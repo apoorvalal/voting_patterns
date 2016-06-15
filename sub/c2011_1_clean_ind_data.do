@@ -12,9 +12,11 @@ la values hh_rel Q09
 // Lang
 bys `hh_id': egen hh_lang = mode(Q10_2)
 la values hh_lang Q10_2
-
 // Education Level
+bys `hh_id': egen hh_lit = mode(Q13)
+la values hh_lang Q13
 
+drop ID2 
 
 save "${tmp}/ind_lev_merged", replace
 

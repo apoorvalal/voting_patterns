@@ -23,4 +23,6 @@ foreach l in `labels' {
 
 merge m:1 DIST VDCMUN using "`path'/batchid", nogen 
 
+g mig_dummy = (H13 == 1)
+compress
 save "${tmp}/hh_w_geo_ids", replace

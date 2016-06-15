@@ -36,10 +36,10 @@ cd "${input}"
 // Preface
 //----------------------------------------------------------------------------//
 
-* log using "$path/analysis/output/analysis.log"
+// log using "$path/analysis/output/analysis.log"
 cap log close
 clear all
-* set graphics off
+//  set graphics off
 
 cd "${code}/"
 

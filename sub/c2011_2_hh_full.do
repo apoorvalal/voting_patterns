@@ -25,4 +25,7 @@ decode VNAME, g(`vil')
 replace `vil' = trim(`vil')
 g village_id = `dist' + "-"+ `vil'
 
+drop `dist' `vil'
+compress
+
 save "${output}/c_2011_full", replace

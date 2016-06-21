@@ -3,9 +3,14 @@ ls "`path'"
 loc hh_id "DIST VDCMUN WARD EA HNO HHNO"
 loc ind_id "`hh_id' IDCODE"
 use "`path'/Individual01.dta", clear
+
 // Caste
 bys `hh_id': egen hh_caste = mode(Q06), maxmode
 la values hh_caste Q06
+tempvar t
+bys `hh_id': g `t' = (Q06[_n] != Q06[_n-1]) * (_n != 1)
+bys `hh_id': egen hh_multi_caste = max(`t')
+
 // Religion
 bys `hh_id': egen hh_rel = mode(Q09), maxmode
 la values hh_rel Q09

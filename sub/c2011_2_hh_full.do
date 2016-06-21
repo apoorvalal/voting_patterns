@@ -14,4 +14,3 @@ g SanitationQualIndex = (H06<3) + (H06<4)
 g GenderEquityPropertyIndex = (H08 == 1 | H 09 == 1)
 save "${output}/c_2011_full", replace
 
-di "hello"

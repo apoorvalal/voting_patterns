@@ -57,7 +57,7 @@ General Macros
 
 // do "${code}/sub/c2011_0_extract_labels"
 // do "${code}/sub/c2011_1_clean_hh_data"
-// do "${code}/sub/c2011_1_clean_ind_data"
+do "${code}/sub/c2011_1_clean_ind_data"
 do "${code}/sub/c2011_2_hh_full"
 
 

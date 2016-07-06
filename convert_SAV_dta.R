@@ -4,7 +4,7 @@ if (sys=="mac") {
    path = c("/Users/apoorvalal/Desktop/projects/nepal_voting_patterns/analysis/input/Nepal Census 2011/pums/assets/datafiles")
 } else {
    if (sys=="win") {
-   path = c("C:/Users/Apoorva Lal/Desktop/Research Papers/voting_patterns_nepal/analysis/input/Nepal Census 2011/pums/assets/datafiles")
+   path = c("C:/Users/Apoorva Lal/Desktop/Research/voting_patterns_nepal/analysis/input/Nepal Census 2011/pums/assets/datafiles")
    }
    else {
       print("incorrect sys")

@@ -20,10 +20,9 @@ Notes:
 
 
 running C:\Program Files (x86)\Stata13\profile.do ...
-r; t=0.00 21:31:11
+r; t=0.00 10:40:29
 
-. do "C:\Users\Apoorva Lal\Desktop\Research Papers\Nepal_Voting\analysis\code\_main.d
-> o" 
+. do "C:\Users\Apoorva Lal\Desktop\Research\Nepal_Voting\analysis\code\_main.do" 
 
 . //----------------------------------------------------------------------------//
 . //
@@ -40,47 +39,47 @@ r; t=0.00 21:31:11
 . //----------------------------------------------------------------------------//
 . 
 . gl sys "win" // mac or win - change when switching systems
-r; t=0.00 21:31:11
+r; t=0.00 10:40:29
 
-. gl path_win "C:/Users/Apoorva Lal/Desktop/Research Papers/Nepal_Voting/analysis/"
-r; t=0.00 21:31:11
+. gl path_win "C:/Users/Apoorva Lal/Desktop/Research/Nepal_Voting/analysis/"
+r; t=0.00 10:40:29
 
 . gl path_mac "/Users/apoorvalal/Desktop/projects/nepal_voting_patterns/analysis"
-r; t=0.00 21:31:11
+r; t=0.00 10:40:29
 
 . 
 . gl path "${path_${sys}}"
-r; t=0.00 21:31:11
+r; t=0.00 10:40:29
 
 . 
 . gl input "${path}/input" 
-r; t=0.00 21:31:11
+r; t=0.00 10:40:29
 
 . gl output "${path}/output"
-r; t=0.00 21:31:11
+r; t=0.00 10:40:29
 
 . gl code_win "${path_win}/code/"
-r; t=0.00 21:31:11
+r; t=0.00 10:40:29
 
 . gl code_mac "${path_mac}/code/"
-r; t=0.00 21:31:11
+r; t=0.00 10:40:29
 
 . gl code "${code_${sys}}" 
-r; t=0.00 21:31:11
+r; t=0.00 10:40:29
 
 . 
 . gl tmp "${path}/tmp"
-r; t=0.00 21:31:11
+r; t=0.00 10:40:29
 
 . 
 . // Data Sources
 . gl raw_2011 "${input}/Nepal Census 2011/pums/assets/datafiles/"
-r; t=0.00 21:31:11
+r; t=0.00 10:40:29
 
 . 
 . cd "${input}"
-C:\Users\Apoorva Lal\Desktop\Research Papers\Nepal_Voting\analysis\input
-r; t=0.00 21:31:11
+C:\Users\Apoorva Lal\Desktop\Research\Nepal_Voting\analysis\input
+r; t=0.00 10:40:29
 
 . 
 . 
@@ -90,16 +89,16 @@ r; t=0.00 21:31:11
 . 
 . // log using "$path/analysis/output/analysis.log"
 . cap log close
-r; t=0.00 21:31:11
+r; t=0.02 10:40:29
 
 . clear all
-r; t=0.00 21:31:11
+r; t=0.18 10:40:29
 
 . //  set graphics off
 . 
 . cd "${code}/"
-C:\Users\Apoorva Lal\Desktop\Research Papers\Nepal_Voting\analysis\code
-r; t=0.00 21:31:11
+C:\Users\Apoorva Lal\Desktop\Research\Nepal_Voting\analysis\code
+r; t=0.00 10:40:29
 
 . 
 . /* 
@@ -107,592 +106,36 @@ r; t=0.00 21:31:11
 >  */
 . 
 .  set tracedepth 1
-r; t=0.00 21:31:11
+r; t=0.00 10:40:29
 
 .  set r on, perm
 (set rmsg preference recorded)
-r; t=0.00 21:31:11
+r; t=0.00 10:40:29
 
 .  pause on
-r; t=0.00 21:31:11
+r; t=0.03 10:40:29
 
 .  
 . //----------------------------------------------------------------------------//
 . // Main
 . //----------------------------------------------------------------------------//
 . 
-. do "${code}/sub/c2011_0_extract_labels"
-
-. loc path "${raw_2011}"
-r; t=0.00 21:31:11
-
-. 
-. * extract labels from batchid file 
-. 
-. use "`path'/batchid.dta", clear
-(Written by R.              )
-r; t=0.00 21:31:11
-
-. cap mkdir "${code}/sub/labels/"
-r; t=0.00 21:31:11
-
-. la dir
-URB_RUR
-ECO_DEV
-ECO_BELT
-DEV_REG
-DDVVV
-VNAME
-DNAME
-DIST
-r; t=0.00 21:31:11
-
-. loc labels "`r(names)'"
-r; t=0.00 21:31:11
-
-. foreach l in `labels' {
-  2.         la save `l' using "${code}/sub/labels/batchid_`l'_labels", replace      
-  3. }
-file C:/Users/Apoorva Lal/Desktop/Research Papers/Nepal_Voting/analysis//code//sub/la
-> bels/batchid_URB_RUR_labels.do saved
-file C:/Users/Apoorva Lal/Desktop/Research Papers/Nepal_Voting/analysis//code//sub/la
-> bels/batchid_ECO_DEV_labels.do saved
-file C:/Users/Apoorva Lal/Desktop/Research Papers/Nepal_Voting/analysis//code//sub/la
-> bels/batchid_ECO_BELT_labels.do saved
-file C:/Users/Apoorva Lal/Desktop/Research Papers/Nepal_Voting/analysis//code//sub/la
-> bels/batchid_DEV_REG_labels.do saved
-file C:/Users/Apoorva Lal/Desktop/Research Papers/Nepal_Voting/analysis//code//sub/la
-> bels/batchid_DDVVV_labels.do saved
-file C:/Users/Apoorva Lal/Desktop/Research Papers/Nepal_Voting/analysis//code//sub/la
-> bels/batchid_VNAME_labels.do saved
-file C:/Users/Apoorva Lal/Desktop/Research Papers/Nepal_Voting/analysis//code//sub/la
-> bels/batchid_DNAME_labels.do saved
-file C:/Users/Apoorva Lal/Desktop/Research Papers/Nepal_Voting/analysis//code//sub/la
-> bels/batchid_DIST_labels.do saved
-r; t=0.11 21:31:11
-
-.         
-. clear
-r; t=0.00 21:31:11
-
-. 
-end of do-file
-r; t=0.11 21:31:11
-
-. do "${code}/sub/c2011_1_clean_hh_data"
-
-. loc path "${raw_2011}"
-r; t=0.00 21:31:11
-
-. 
-. *******************************************************
-. *** Saved Labels, now labelling HH and IND level files
-. *******************************************************
-. loc varlist_household "DIST VDCMUN WARD EA HNO HHNO H01 H021 H022 H023 H024 H025 H0
-> 3 H04 H05 H06 H07A H07B H07C H07D H07E H07F H07G H07H H07I H07J H07K H07L H08 H09 H
-> 10B H10K H10D H10R H10A H10P H11 H11NO H13 H13NO"
-r; t=0.00 21:31:11
-
-. loc varlist_batchid     "DIST DNAME VDCMUN VNAME DDVVV DEV_REG ECO_BELT ECO_DEV URB
-> _RUR"
-r; t=0.00 21:31:11
-
-. 
-. use "`path'/household.dta", clear
-r; t=0.04 21:31:11
-
-. cap la drop DIST
-r; t=0.00 21:31:11
-
-. do "${code}/sub/labels/batchid_DIST_labels"
-
-. label define DIST 1 `"Taplejung"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 2 `"Panchthar"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 3 `"Ilam"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 4 `"Jhapa"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 5 `"Morang"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 6 `"Sunsari"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 7 `"Dhankuta"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 8 `"Terhathum"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 9 `"Sankhuwasabha"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 10 `"Bhojpur"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 11 `"Solukhumbu"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 12 `"Okhaldhunga"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 13 `"Khotang"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 14 `"Udayapur"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 15 `"Saptari"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 16 `"Siraha"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 17 `"Dhanusa"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 18 `"Mahottari"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 19 `"Sarlahi"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 20 `"Sindhuli"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 21 `"Ramechhap"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 22 `"Dolakha"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 23 `"Sindhupalchok"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 24 `"Kavrepalanchok"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 25 `"Lalitpur"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 26 `"Bhaktapur"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 27 `"Kathmandu"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 28 `"Nuwakot"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 29 `"Rasuwa"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 30 `"Dhading"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 31 `"Makwanpur"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 32 `"Rautahat"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 33 `"Bara"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 34 `"Parsa"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 35 `"Chitawan"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 36 `"Gorkha"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 37 `"Lamjung"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 38 `"Tanahu"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 39 `"Syangja"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 40 `"Kaski"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 41 `"Manang"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 42 `"Mustang"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 43 `"Myagdi"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 44 `"Parbat"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 45 `"Baglung"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 46 `"Gulmi"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 47 `"Palpa"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 48 `"Nawalparasi"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 49 `"Rupandehi"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 50 `"Kapilbastu"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 51 `"Arghakhanchi"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 52 `"Pyuthan"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 53 `"Rolpa"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 54 `"Rukum"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 55 `"Salyan"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 56 `"Dang"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 57 `"Banke"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 58 `"Bardiya"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 59 `"Surkhet"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 60 `"Dailekh"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 61 `"Jajarkot"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 62 `"Dolpa"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 63 `"Jumla"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 64 `"Kalikot"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 65 `"Mugu"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 66 `"Humla"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 67 `"Bajura"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 68 `"Bajhang"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 69 `"Achham"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 70 `"Doti"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 71 `"Kailali"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 72 `"Kanchanpur"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 73 `"Dadeldhura"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 74 `"Baitadi"', modify
-r; t=0.00 21:31:11
-
-. label define DIST 75 `"Darchula"', modify
-r; t=0.00 21:31:11
-
-. 
-end of do-file
-r; t=0.00 21:31:11
-
-. la val DIST DIST
-r; t=0.00 21:31:11
-
-. compress
-  (0 bytes saved)
-r; t=0.01 21:31:11
-
-. 
-. foreach v of varlist _all{
-  2.         format %10.0g `v' 
-  3. }
-r; t=0.00 21:31:11
-
-. qui la dir
-r; t=0.00 21:31:11
-
-. loc labels "`r(names)'"
-r; t=0.00 21:31:11
-
-. foreach l in `labels' {
-  2.         la save `l' using "${code}/sub/labels/hh_`l'_labels", replace   
-  3. }
-file C:/Users/Apoorva Lal/Desktop/Research Papers/Nepal_Voting/analysis//code//sub/la
-> bels/hh_DIST_labels.do saved
-file C:/Users/Apoorva Lal/Desktop/Research Papers/Nepal_Voting/analysis//code//sub/la
-> bels/hh_H01_labels.do saved
-file C:/Users/Apoorva Lal/Desktop/Research Papers/Nepal_Voting/analysis//code//sub/la
-> bels/hh_H021_labels.do saved
-file C:/Users/Apoorva Lal/Desktop/Research Papers/Nepal_Voting/analysis//code//sub/la
-> bels/hh_H022_labels.do saved
-file C:/Users/Apoorva Lal/Desktop/Research Papers/Nepal_Voting/analysis//code//sub/la
-> bels/hh_H023_labels.do saved
-file C:/Users/Apoorva Lal/Desktop/Research Papers/Nepal_Voting/analysis//code//sub/la
-> bels/hh_H024_labels.do saved
-file C:/Users/Apoorva Lal/Desktop/Research Papers/Nepal_Voting/analysis//code//sub/la
-> bels/hh_H025_labels.do saved
-file C:/Users/Apoorva Lal/Desktop/Research Papers/Nepal_Voting/analysis//code//sub/la
-> bels/hh_H03_labels.do saved
-file C:/Users/Apoorva Lal/Desktop/Research Papers/Nepal_Voting/analysis//code//sub/la
-> bels/hh_H04_labels.do saved
-file C:/Users/Apoorva Lal/Desktop/Research Papers/Nepal_Voting/analysis//code//sub/la
-> bels/hh_H05_labels.do saved
-file C:/Users/Apoorva Lal/Desktop/Research Papers/Nepal_Voting/analysis//code//sub/la
-> bels/hh_H06_labels.do saved
-file C:/Users/Apoorva Lal/Desktop/Research Papers/Nepal_Voting/analysis//code//sub/la
-> bels/hh_H07A_labels.do saved
-file C:/Users/Apoorva Lal/Desktop/Research Papers/Nepal_Voting/analysis//code//sub/la
-> bels/hh_H07B_labels.do saved
-file C:/Users/Apoorva Lal/Desktop/Research Papers/Nepal_Voting/analysis//code//sub/la
-> bels/hh_H07C_labels.do saved
-file C:/Users/Apoorva Lal/Desktop/Research Papers/Nepal_Voting/analysis//code//sub/la
-> bels/hh_H07D_labels.do saved
-file C:/Users/Apoorva Lal/Desktop/Research Papers/Nepal_Voting/analysis//code//sub/la
-> bels/hh_H07E_labels.do saved
-file C:/Users/Apoorva Lal/Desktop/Research Papers/Nepal_Voting/analysis//code//sub/la
-> bels/hh_H07F_labels.do saved
-file C:/Users/Apoorva Lal/Desktop/Research Papers/Nepal_Voting/analysis//code//sub/la
-> bels/hh_H07G_labels.do saved
-file C:/Users/Apoorva Lal/Desktop/Research Papers/Nepal_Voting/analysis//code//sub/la
-> bels/hh_H07H_labels.do saved
-file C:/Users/Apoorva Lal/Desktop/Research Papers/Nepal_Voting/analysis//code//sub/la
-> bels/hh_H07I_labels.do saved
-file C:/Users/Apoorva Lal/Desktop/Research Papers/Nepal_Voting/analysis//code//sub/la
-> bels/hh_H07J_labels.do saved
-file C:/Users/Apoorva Lal/Desktop/Research Papers/Nepal_Voting/analysis//code//sub/la
-> bels/hh_H07K_labels.do saved
-file C:/Users/Apoorva Lal/Desktop/Research Papers/Nepal_Voting/analysis//code//sub/la
-> bels/hh_H07L_labels.do saved
-file C:/Users/Apoorva Lal/Desktop/Research Papers/Nepal_Voting/analysis//code//sub/la
-> bels/hh_H08_labels.do saved
-file C:/Users/Apoorva Lal/Desktop/Research Papers/Nepal_Voting/analysis//code//sub/la
-> bels/hh_H09_labels.do saved
-file C:/Users/Apoorva Lal/Desktop/Research Papers/Nepal_Voting/analysis//code//sub/la
-> bels/hh_H11_labels.do saved
-file C:/Users/Apoorva Lal/Desktop/Research Papers/Nepal_Voting/analysis//code//sub/la
-> bels/hh_H13_labels.do saved
-r; t=0.07 21:31:11
-
-. 
-. merge m:1 DIST VDCMUN using "`path'/batchid", nogen 
-(note: variable DIST was byte, now long to accommodate using data's values)
-(note: variable VDCMUN was int, now double to accommodate using data's values)
-(label DIST already defined)
-
-    Result                           # of obs.
-    -----------------------------------------
-    not matched                             0
-    matched                           841,567  
-    -----------------------------------------
-r; t=0.44 21:31:12
-
-. 
-. g mig_dummy = (H13 == 1)
-r; t=0.02 21:31:12
-
-. compress
-  DIST was long now byte
-  DNAME was long now byte
-  VNAME was long now int
-  DDVVV was long now int
-  DEV_REG was long now byte
-  ECO_BELT was long now byte
-  ECO_DEV was long now byte
-  URB_RUR was long now byte
-  mig_dummy was float now byte
-  VDCMUN was double now int
-  (26,088,577 bytes saved)
-r; t=0.68 21:31:12
-
-. save "${tmp}/hh_w_geo_ids", replace
-file C:/Users/Apoorva Lal/Desktop/Research Papers/Nepal_Voting/analysis//tmp/hh_w_geo
-> _ids.dta saved
-r; t=0.04 21:31:12
-
-. 
-end of do-file
-r; t=1.29 21:31:12
-
-. do "${code}/sub/c2011_1_clean_ind_data"
-
-. loc path "${raw_2011}"
-r; t=0.00 21:31:12
-
-. ls "`path'"
-  <dir>   6/14/16 21:10  .                 
-  <dir>   6/14/16 21:10  ..                
-   8.0k   6/12/16 22:00  .Rhistory         
-  75.3M   5/29/16 10:36  2011_all_census_files.RData
-4418.7k   5/18/16 23:30  ABSENTEE.dta      
-4687.6k   4/21/14 11:38  ABSENTEE.SAV      
- 378.2k   1/16/15  8:33  BatchID.dta       
- 253.5k   4/21/14 11:18  BatchId.sav       
-1474.9k   5/18/16 23:05  death.dta         
- 264.4k   4/10/14 21:56  DEATH.SAV         
-  36.9M   5/18/16 23:29  household.dta     
-  36.1M   4/10/14 21:48  Household.SAV     
-1055.1M   2/25/15 11:47  Individual01.dta  
-  99.9M   4/01/14 16:38  Individual01.SAV  
-1694.4M   6/14/16 21:10  Individual02.dta  
- 227.3M   4/21/14 11:58  Individual02.SAV  
-r; t=0.00 21:31:12
-
-. loc hh_id "DIST VDCMUN WARD EA HNO HHNO"
-r; t=0.00 21:31:12
-
-. loc ind_id "`hh_id' IDCODE"
-r; t=0.00 21:31:12
-
-. use "`path'/Individual01.dta", clear
-r; t=10.84 21:31:23
-
-. 
-. // Caste
-. bys `hh_id': egen hh_caste = mode(Q06), maxmode
-r; t=16.53 21:31:40
-
-. la values hh_caste Q06
-r; t=0.00 21:31:40
-
-. tempvar t
-r; t=0.00 21:31:40
-
-. bys `hh_id': g `t' = (Q06[_n] != Q06[_n-1]) * (_n != 1)
-r; t=0.20 21:31:40
-
-. bys `hh_id': egen hh_multi_caste = max(`t')
-r; t=18.41 21:31:58
-
-. 
-. // Religion
-. bys `hh_id': egen hh_rel = mode(Q09), maxmode
-r; t=13.74 21:32:12
-
-. la values hh_rel Q09
-r; t=0.00 21:32:12
-
-. // Lang
-. bys `hh_id': egen hh_lang = mode(Q10_2), maxmode
-r; t=13.01 21:32:25
-
-. la values hh_lang Q10_2
-r; t=0.00 21:32:25
-
-. // Education Level
-. bys `hh_id': egen hh_lit = mode(Q13), maxmode
-r; t=12.39 21:32:37
-
-. la values hh_lang Q13
-r; t=0.00 21:32:37
-
-. // gender balance
-. recode Q04 (1 = 0) (2 = 1) // female dummy
-(Q04: 4037885 changes made)
-r; t=1.94 21:32:39
-
-. cap la drop Q04
-r; t=0.00 21:32:39
-
-. la def Q04 0 Male 1 Female
-r; t=0.00 21:32:39
-
-. la values Q04 Q04
-r; t=0.00 21:32:39
-
-. bys `hh_id': egen hh_gender = mean(Q04)
-r; t=2.34 21:32:42
-
-. 
-. drop ID2  HHCaste HHMTong LiterateDummy HHLiteracy HHRel stHHCaste stHHMTong stHHRe
-> l
-r; t=0.17 21:32:42
-
-. 
-. bys `hh_id': keep if _n == _N
-(3196318 observations deleted)
-r; t=1.96 21:32:44
-
-. 
-. keep `hh_id' hh_*
-r; t=0.04 21:32:44
-
-. compress
-  hh_multi_caste was float now byte
-  DIST was double now byte
-  VDCMUN was double now int
-  WARD was double now byte
-  EA was double now byte
-  HNO was double now int
-  HHNO was double now int
-  hh_caste was double now int
-  hh_rel was double now byte
-  hh_lang was double now int
-  hh_lit was double now byte
-  (57,226,556 bytes saved)
-r; t=1.90 21:32:46
-
-. save "${tmp}/hh_level_caste", replace
-file C:/Users/Apoorva Lal/Desktop/Research Papers/Nepal_Voting/analysis//tmp/hh_level
-> _caste.dta saved
-r; t=0.04 21:32:46
-
-. 
-end of do-file
-r; t=93.50 21:32:46
-
+. // do "${code}/sub/c2011_0_extract_labels"
+. // do "${code}/sub/c2011_1_clean_hh_data"
+. // do "${code}/sub/c2011_1_clean_ind_data"
 . do "${code}/sub/c2011_2_hh_full"
 
 . loc hh_id "DIST VDCMUN WARD EA HNO HHNO"
-r; t=0.00 21:32:46
+r; t=0.00 10:40:29
 
 . loc dropvars "H01 H021 H022 H023 H024 H025 H03 H04 H05 H06 H07A H07B H07C H07D H07E
 >  H07F H07G H07H H07I H07J H07K H07L H08 H09 H10B H10K H10D H10R H10A H10P H11 H11NO
 >  H13 H13NO"
-r; t=0.00 21:32:46
+r; t=0.00 10:40:29
 
 . 
 . use "${tmp}/hh_w_geo_ids", clear
-r; t=0.05 21:32:46
+r; t=0.78 10:40:30
 
 . merge 1:1 `hh_id' using "${tmp}/hh_level_caste", nogen
 (label DIST already defined)
@@ -702,77 +145,77 @@ r; t=0.05 21:32:46
     not matched                             0
     matched                           841,567  
     -----------------------------------------
-r; t=0.63 21:32:47
+r; t=0.73 10:40:30
 
 . cap drop householdcount
-r; t=0.00 21:32:47
+r; t=0.00 10:40:30
 
 . // bysort DistCons: egen HHcount = count(VDCMUN)
 . egen Amenitiesindex = rownonmiss(H07A H07B H07C H07D H07E H07F H07G H07H H07I H07J 
 > H07K H07L)
-r; t=0.62 21:32:47
+r; t=0.45 10:40:31
 
 . g HouseholdQualIndex = (H022 == 2) + (H021 == 2) + (H021 == 4 | H021 == 3 | H022 ==
 >  4)
-r; t=0.05 21:32:47
+r; t=0.05 10:40:31
 
 . replace HouseholdQualIndex =  HouseholdQualIndex + H024
 (841567 real changes made)
-r; t=0.05 21:32:47
+r; t=0.02 10:40:31
 
 . label define HHQ 510 "Very High" 3 "High" 4 "High" 2 "Medium" 1 "Low"
-r; t=0.00 21:32:47
+r; t=0.00 10:40:31
 
 . label values HouseholdQualIndex HHQ
-r; t=0.00 21:32:47
+r; t=0.00 10:40:31
 
 . g WaterQualIndex = (H03 < 2) + (H03 < 3)
-r; t=0.04 21:32:47
+r; t=0.03 10:40:31
 
 . g EnergyQualIndex = (H04 == 3 | H04 == 6 | H04 == 5) + (H05 == 1) + 0.5*(H05 == 4) 
 > +  0.5*(H05 == 2 |H04 == 2)
-r; t=0.05 21:32:47
+r; t=0.07 10:40:31
 
 . g SanitationQualIndex = (H06<3) + (H06<4)
-r; t=0.03 21:32:47
+r; t=0.03 10:40:31
 
 . g GenderEquityPropertyIndex = (H08 == 1 | H 09 == 1)
-r; t=0.03 21:32:47
+r; t=0.02 10:40:31
 
 . clonevar mig_count = H13NO 
 (637512 missing values generated)
-r; t=0.03 21:32:47
+r; t=0.06 10:40:31
 
 . 
 . drop `dropvars'
-r; t=0.03 21:32:47
+r; t=0.02 10:40:31
 
 . tempvar dist
-r; t=0.00 21:32:47
+r; t=0.00 10:40:31
 
 . tempvar vil
-r; t=0.00 21:32:47
+r; t=0.00 10:40:31
 
 . decode DNAME, g(`dist') 
-r; t=0.11 21:32:48
+r; t=0.10 10:40:31
 
 . replace `dist' = trim(`dist')
 (818687 real changes made)
-r; t=0.17 21:32:48
+r; t=0.17 10:40:31
 
 . decode VNAME, g(`vil') 
-r; t=0.16 21:32:48
+r; t=0.22 10:40:32
 
 . replace `vil' = trim(`vil')
 (835884 real changes made)
-r; t=0.25 21:32:48
+r; t=0.20 10:40:32
 
 . g village_id = `dist' + "-"+ `vil'
-r; t=0.97 21:32:49
+r; t=0.96 10:40:33
 
 . 
 . drop `dist' `vil'
-r; t=0.04 21:32:49
+r; t=0.03 10:40:33
 
 . compress
   Amenitiesindex was float now byte
@@ -781,21 +224,21 @@ r; t=0.04 21:32:49
   SanitationQualIndex was float now byte
   GenderEquityPropertyIndex was float now byte
   (12,623,505 bytes saved)
-r; t=0.71 21:32:50
+r; t=0.60 10:40:33
 
 . 
 . save "${output}/c_2011_full", replace
-file C:/Users/Apoorva Lal/Desktop/Research Papers/Nepal_Voting/analysis//output/c_201
-> 1_full.dta saved
-r; t=0.07 21:32:50
+file C:/Users/Apoorva Lal/Desktop/Research/Nepal_Voting/analysis//output/c_2011_full.
+> dta saved
+r; t=0.06 10:40:33
 
 . 
 end of do-file
-r; t=4.10 21:32:50
+r; t=4.63 10:40:33
 
 . 
 . 
 . 
 . 
 end of do-file
-r; t=99.02 21:32:50
+r; t=4.88 10:40:33

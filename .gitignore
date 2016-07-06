@@ -1,4 +1,10 @@
 *.RHistory
+*.csv
+*.rds
+*.pdf
+
+
+
 
 #################
 ## Eclipse

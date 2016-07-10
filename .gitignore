@@ -1,4 +1,6 @@
 *.RHistory
+*.log
+*.py
 
 #################
 ## Eclipse

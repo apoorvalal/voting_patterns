@@ -1,6 +1,6 @@
 //----------------------------------------------------------------------------//
 //
-// Paper: Analysis of voting patterns Nepal
+// Paper: Analysis of voting patterns Nepal - clean census raw data first
 //
 // do.file: analysis
 //
@@ -15,9 +15,7 @@
 gl sys "win" // mac or win - change when switching systems
 gl path_win "C:/Users/Apoorva Lal/Desktop/Research/Nepal_Voting/analysis"
 gl path_mac "/Users/apoorvalal/Desktop/projects/nepal_voting_patterns/analysis"
-
 gl path "${path_${sys}}"
-
 gl input "${path}/input" 
 gl output "${path}/output"
 gl code_win "${path_win}/code/"
